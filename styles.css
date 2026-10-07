@@ -1,0 +1,1373 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+
+    background: #000;
+
+    overflow: hidden;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+/* ===================================
+   ESCENA
+=================================== */
+
+.escena {
+
+    position: relative;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 52%,
+            #075a70 0%,
+            #04303d 15%,
+            #01151d 32%,
+            #000 70%
+        );
+}
+
+
+/* ===================================
+   FONDO
+=================================== */
+
+.fondo {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            ellipse at center,
+            rgba(0, 238, 255, .25),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 238, 255, .05),
+            transparent
+        );
+
+    animation:
+        fondoPulso 4s infinite alternate;
+}
+
+
+@keyframes fondoPulso {
+
+    from {
+        opacity: .55;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ===================================
+   PARTÍCULAS
+=================================== */
+
+.particulas {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.9) 1px,
+            transparent 2px
+        );
+
+    background-size: 55px 55px;
+
+    opacity: .4;
+
+    animation:
+        particulasMovimiento 8s linear infinite;
+}
+
+
+@keyframes particulasMovimiento {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100px);
+    }
+}
+
+
+/* ===================================
+   TITULO
+=================================== */
+
+.titulo {
+
+    position: absolute;
+
+    top: 5%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 95%;
+
+    z-index: 30;
+
+    text-align: center;
+}
+
+
+.titulo h1 {
+
+    color: white;
+
+    font-size:
+        clamp(27px, 5vw, 70px);
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    line-height: 1.1;
+
+    text-shadow:
+
+        0 0 5px white,
+
+        0 0 15px #00eaff,
+
+        0 0 30px #00eaff,
+
+        0 0 60px #008cff;
+
+    animation:
+        tituloBrillo 2s infinite alternate;
+}
+
+
+.titulo span {
+
+    display: inline-block;
+
+}
+
+
+@keyframes tituloBrillo {
+
+    from {
+        opacity: .8;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ===================================
+   MENSAJES
+=================================== */
+
+.mensaje {
+
+    position: absolute;
+
+    z-index: 10;
+
+    color: rgba(255,255,255,.8);
+
+    font-size:
+        clamp(8px, 1.2vw, 15px);
+
+    white-space: nowrap;
+
+    text-shadow:
+
+        0 0 5px #fff,
+
+        0 0 10px #00eaff;
+
+    animation:
+        textoMovimiento 5s ease-in-out infinite alternate;
+}
+
+
+.mensaje::first-letter {
+
+    color: #ff315d;
+}
+
+
+/* POSICIONES */
+
+.mensaje1 {
+    top: 20%;
+    left: 8%;
+}
+
+.mensaje2 {
+    top: 24%;
+    right: 8%;
+    animation-delay: -2s;
+}
+
+.mensaje3 {
+    top: 31%;
+    left: 4%;
+    animation-delay: -1s;
+}
+
+.mensaje4 {
+    top: 35%;
+    right: 4%;
+    animation-delay: -3s;
+}
+
+.mensaje5 {
+    top: 45%;
+    left: 2%;
+    animation-delay: -2s;
+}
+
+.mensaje6 {
+    top: 48%;
+    right: 3%;
+    animation-delay: -1s;
+}
+
+.mensaje7 {
+    bottom: 35%;
+    left: 5%;
+    animation-delay: -4s;
+}
+
+.mensaje8 {
+    bottom: 30%;
+    right: 4%;
+    animation-delay: -3s;
+}
+
+.mensaje9 {
+    bottom: 20%;
+    left: 8%;
+    animation-delay: -1s;
+}
+
+.mensaje10 {
+    bottom: 16%;
+    right: 8%;
+    animation-delay: -2s;
+}
+
+
+@keyframes textoMovimiento {
+
+    from {
+        transform:
+            translateX(-20px);
+
+        opacity: .3;
+    }
+
+    to {
+
+        transform:
+            translateX(30px);
+
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================
+   VEHÍCULOS
+=================================== */
+
+.vehiculo {
+
+    position: absolute;
+
+    z-index: 15;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 8px rgba(0,220,255,.8)
+        );
+
+    user-select: none;
+
+    pointer-events: none;
+}
+
+
+/* ===================================
+   AUTOS
+   MOVIMIENTO CURVO Y LENTO
+=================================== */
+
+.auto {
+
+    width:
+        clamp(100px, 15vw, 240px);
+
+    animation:
+        autoMovimiento 16s ease-in-out infinite;
+
+    transform-origin: center center;
+}
+
+
+/* POSICIONES */
+
+.auto1 {
+    top: 24%;
+    left: 5%;
+    animation-delay: -2s;
+}
+
+.auto2 {
+    top: 29%;
+    right: 5%;
+    animation-delay: -6s;
+}
+
+.auto3 {
+    top: 40%;
+    left: 2%;
+    animation-delay: -10s;
+}
+
+.auto4 {
+    top: 43%;
+    right: 2%;
+    animation-delay: -4s;
+}
+
+.auto5 {
+    bottom: 25%;
+    left: 5%;
+    animation-delay: -8s;
+}
+
+.auto6 {
+    bottom: 18%;
+    right: 5%;
+    animation-delay: -12s;
+}
+
+.auto7 {
+    bottom: 35%;
+    left: 2%;
+    animation-delay: -5s;
+}
+
+.auto8 {
+    top: 17%;
+    right: 2%;
+    animation-delay: -9s;
+}
+
+
+/* ===================================
+   TRAYECTORIA CURVA DE LOS AUTOS
+=================================== */
+
+@keyframes autoMovimiento {
+
+    0% {
+
+        transform:
+            translate(0, 0)
+            rotate(-8deg);
+
+        opacity: 0;
+    }
+
+    10% {
+
+        transform:
+            translate(35px, -20px)
+            rotate(-5deg);
+
+        opacity: 1;
+    }
+
+    25% {
+
+        transform:
+            translate(90px, -60px)
+            rotate(3deg);
+
+        opacity: 1;
+    }
+
+    40% {
+
+        transform:
+            translate(150px, -90px)
+            rotate(8deg);
+
+        opacity: 1;
+    }
+
+    50% {
+
+        transform:
+            translate(190px, -60px)
+            rotate(12deg);
+
+        opacity: 1;
+    }
+
+    60% {
+
+        transform:
+            translate(210px, 0)
+            rotate(7deg);
+
+        opacity: 1;
+    }
+
+    75% {
+
+        transform:
+            translate(170px, 60px)
+            rotate(-3deg);
+
+        opacity: 1;
+    }
+
+    90% {
+
+        transform:
+            translate(80px, 80px)
+            rotate(-8deg);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translate(0, 0)
+            rotate(-8deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ===================================
+   MOTOS
+   MOVIMIENTO CURVO Y LENTO
+=================================== */
+
+.moto {
+
+    width:
+        clamp(80px, 12vw, 190px);
+
+    animation:
+        motoMovimiento 18s ease-in-out infinite;
+
+    transform-origin: center center;
+}
+
+
+/* POSICIONES */
+
+.moto1 {
+    top: 34%;
+    left: 5%;
+    animation-delay: -3s;
+}
+
+.moto2 {
+    top: 55%;
+    right: 5%;
+    animation-delay: -8s;
+}
+
+.moto3 {
+    bottom: 23%;
+    left: 5%;
+    animation-delay: -12s;
+}
+
+.moto4 {
+    top: 18%;
+    right: 5%;
+    animation-delay: -6s;
+}
+
+
+/* ===================================
+   TRAYECTORIA CURVA DE LAS MOTOS
+=================================== */
+
+@keyframes motoMovimiento {
+
+    0% {
+
+        transform:
+            translate(0, 0)
+            rotate(-7deg);
+
+        opacity: 0;
+    }
+
+    15% {
+
+        transform:
+            translate(35px, -25px)
+            rotate(-3deg);
+
+        opacity: 1;
+    }
+
+    30% {
+
+        transform:
+            translate(90px, -60px)
+            rotate(5deg);
+
+        opacity: 1;
+    }
+
+    45% {
+
+        transform:
+            translate(140px, -40px)
+            rotate(10deg);
+
+        opacity: 1;
+    }
+
+    60% {
+
+        transform:
+            translate(170px, 10px)
+            rotate(6deg);
+
+        opacity: 1;
+    }
+
+    75% {
+
+        transform:
+            translate(130px, 60px)
+            rotate(-4deg);
+
+        opacity: 1;
+    }
+
+    90% {
+
+        transform:
+            translate(60px, 75px)
+            rotate(-8deg);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translate(0, 0)
+            rotate(-7deg);
+
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================
+   AUTO CENTRAL
+=================================== */
+
+.vehiculo-central {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width:
+        clamp(220px, 35vw, 500px);
+
+    z-index: 25;
+
+    animation:
+        autoCentral 3s ease-in-out infinite alternate;
+}
+
+
+.vehiculo-central img {
+
+    position: relative;
+
+    width: 100%;
+
+    z-index: 5;
+
+    filter:
+
+        drop-shadow(
+            0 0 15px #00eaff
+        )
+
+        drop-shadow(
+            0 0 35px #008cff
+        );
+}
+
+
+@keyframes autoCentral {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            translateY(-8px);
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            translateY(8px);
+    }
+}
+
+
+/* ===================================
+   BRILLO CENTRAL
+=================================== */
+
+.brillo-central {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(0,255,255,.8),
+            transparent 65%
+        );
+
+    filter: blur(25px);
+
+    animation:
+        brilloCentral 2s infinite alternate;
+}
+
+
+@keyframes brilloCentral {
+
+    from {
+        transform: scale(.8);
+        opacity: .5;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+
+/* ===================================
+   PORTAL
+=================================== */
+
+.portal {
+
+    position: absolute;
+
+    top: 57%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    width:
+        clamp(250px, 42vw, 600px);
+
+    height: 180px;
+
+    z-index: 5;
+
+    perspective: 500px;
+}
+
+
+.anillo {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        rotateX(65deg);
+
+    border-radius: 50%;
+
+    border: 3px solid #00f7ff;
+
+    box-shadow:
+
+        0 0 10px #00f7ff,
+
+        0 0 30px #00f7ff,
+
+        inset 0 0 20px #00f7ff;
+
+    animation:
+        anilloGira 4s linear infinite;
+}
+
+
+.anillo1 {
+
+    width: 100%;
+    height: 100%;
+}
+
+.anillo2 {
+
+    width: 75%;
+    height: 75%;
+
+    animation-duration: 3s;
+}
+
+.anillo3 {
+
+    width: 45%;
+    height: 45%;
+
+    animation-duration: 2s;
+}
+
+
+@keyframes anilloGira {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotateX(65deg)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotateX(65deg)
+            rotateZ(360deg);
+    }
+}
+
+
+/* ===================================
+   ENERGÍA
+=================================== */
+
+.energia {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 20px;
+
+    height: 20px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+
+        0 0 15px white,
+
+        0 0 40px cyan,
+
+        0 0 80px cyan,
+
+        0 0 120px #008cff;
+
+    animation:
+        energiaPulso 1s infinite alternate;
+}
+
+
+@keyframes energiaPulso {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            scale(.5);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            scale(2);
+    }
+}
+
+
+/* ===================================
+   LOGO
+=================================== */
+
+.logo {
+
+    position: absolute;
+
+    bottom: 8%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-5deg);
+
+    z-index: 30;
+
+    text-align: center;
+
+    font-style: italic;
+
+    font-weight: 900;
+
+    pointer-events: none;
+}
+
+
+.logo-hot {
+
+    color: white;
+
+    font-size:
+        clamp(20px, 4vw, 45px);
+
+    text-shadow:
+
+        3px 3px 0 #e00000,
+
+        0 0 15px red;
+}
+
+
+.logo-wheels {
+
+    color: #ffe600;
+
+    font-size:
+        clamp(28px, 5vw, 65px);
+
+    text-shadow:
+
+        3px 3px 0 red,
+
+        0 0 20px orange;
+}
+
+
+/* ===================================
+   BOTÓN
+=================================== */
+
+.boton {
+
+    position: absolute;
+
+    bottom: 3%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 50;
+
+    padding:
+        10px 20px;
+
+    border:
+
+        1px solid #00eaff;
+
+    border-radius: 30px;
+
+    background:
+        rgba(0,0,0,.7);
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #00eaff;
+
+    transition: .3s;
+}
+
+
+.boton:hover {
+
+    background: #00eaff;
+
+    color: #000;
+
+    transform:
+        translateX(-50%)
+        scale(1.08);
+}
+
+
+
+
+
+
+
+
+
+
+/* ===================================
+   MODO RÁPIDO
+=================================== */
+
+.escena.rapido .auto {
+
+    animation-duration: 4s !important;
+}
+
+.escena.rapido .moto {
+
+    animation-duration: 5s !important;
+}
+
+.escena.rapido .mensaje {
+
+    animation-duration: 1s;
+}
+
+.escena.rapido .particulas {
+
+    animation-duration: 1.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================
+   CELULAR
+=================================== */
+
+@media (max-width: 600px) {
+
+    .titulo {
+
+        top: 6%;
+    }
+
+    .titulo h1 {
+
+        font-size: 25px;
+
+        line-height: 1.25;
+    }
+
+    .mensaje {
+
+        font-size: 8px;
+    }
+
+    .auto {
+
+        width: 130px;
+    }
+
+    .moto {
+
+        width: 100px;
+    }
+
+    .vehiculo-central {
+
+        width: 300px;
+    }
+
+    .portal {
+
+        width: 340px;
+
+        height: 130px;
+    }
+
+    .logo {
+
+        bottom: 9%;
+    }
+
+    .boton {
+
+        font-size: 11px;
+
+        padding: 8px 15px;
+    }
+}
+
+/* ==============================
+   PANTALLA DE ACCESO
+   ============================== */
+
+.pantalla-acceso {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at center,
+        #063c63 0%,
+        #02111f 45%,
+        #000 100%);
+
+    padding: 20px;
+}
+
+.caja-acceso {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background: rgba(0, 8, 18, 0.88);
+
+    border: 2px solid #00d9ff;
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 15px #00d9ff,
+        0 0 40px rgba(0, 217, 255, 0.5);
+
+    animation: aparecerCaja 1s ease;
+}
+
+.caja-acceso h1 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 10px #00d9ff,
+        0 0 25px #00d9ff;
+}
+
+.caja-acceso p {
+    color: #c9f8ff;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.caja-acceso input {
+    width: 100%;
+    padding: 14px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid #00d9ff;
+    border-radius: 12px;
+
+    background: rgba(0, 20, 35, 0.9);
+
+    color: white;
+    font-size: 16px;
+
+    outline: none;
+}
+
+.caja-acceso input::placeholder {
+    color: #8abac5;
+}
+
+.caja-acceso input:focus {
+    box-shadow: 0 0 15px #00d9ff;
+}
+
+.caja-acceso button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #00d9ff;
+    color: #001018;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 20px #00d9ff;
+
+    transition: 0.3s;
+}
+
+.caja-acceso button:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 20px #00d9ff,
+        0 0 40px #00d9ff;
+}
+
+#mensajeError {
+    color: #ff5252;
+    margin-top: 15px;
+    min-height: 20px;
+}
+
+@keyframes aparecerCaja {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* CORAZONCITOS */
+.corazon {
+    position: fixed;
+    bottom: -50px;
+    z-index: 9999;
+    pointer-events: none;
+
+    filter: drop-shadow(0 0 8px rgba(255, 0, 80, 0.8));
+
+    animation: subirCorazon 4s ease-in forwards;
+}
+
+@keyframes subirCorazon {
+
+    0% {
+        transform: translateY(0) scale(0.5) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-50vh) scale(1.2) rotate(15deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(0.8) rotate(-15deg);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.corazon {
+    position: fixed;
+    bottom: -60px;
+    z-index: 99999;
+    pointer-events: none;
+    font-size: 30px;
+    animation: corazonesSubir 4s linear forwards;
+}
+
+@keyframes corazonesSubir {
+
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-50vh) scale(1.2) rotate(15deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-115vh) scale(0.8) rotate(-20deg);
+        opacity: 0;
+    }
+}
